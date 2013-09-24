@@ -8,4 +8,14 @@ dependencies {
     compile 'org.antlr:antlr4:4.1'
 }
 
+task(run, dependsOn: 'classes', type: JavaExec) {
+    main = 'nl.grum.grummifier.Grummifier'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(debug, dependsOn: 'classes', type: JavaExec) {
+    main = 'nl.grum.grummifier.Grummifier'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
 archivesBaseName = 'Grummifier'
